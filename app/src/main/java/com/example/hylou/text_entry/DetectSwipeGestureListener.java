@@ -5,8 +5,8 @@ import android.view.MotionEvent;
 
 public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureListener {
     // Minimal x and y axis swipe distance.
-    private static int MIN_SWIPE_DISTANCE_X = 100;
-    private static int MIN_SWIPE_DISTANCE_Y = 100;
+    private static int MIN_SWIPE_DISTANCE_X = 50;
+    private static int MIN_SWIPE_DISTANCE_Y = 50;
 
     // Maximal x and y axis swipe distance.
     private static int MAX_SWIPE_DISTANCE_X = 1000;
@@ -42,10 +42,10 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
         {
             if(deltaX > 0)
             {
-                this.activity.displayMessage("Swipe to left");
+                this.activity.displayMessage("left");
             }else
             {
-                this.activity.displayMessage("Swipe to right");
+                this.activity.displayMessage("right");
             }
         }
 
@@ -53,10 +53,23 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
         {
             if(deltaY > 0)
             {
-                this.activity.displayMessage("Swipe to up");
+                this.activity.displayMessage("up");
             }else
             {
-                this.activity.displayMessage("Swipe to down");
+                this.activity.displayMessage("down");
+            }
+        }
+
+        if((deltaXAbs >= MIN_SWIPE_DISTANCE_X) && (deltaYAbs >= MIN_SWIPE_DISTANCE_Y))
+        {
+            if(deltaX > 0 && deltaY > 0) {
+                this.activity.displayMessage("upper left");
+            } else if (deltaX > 0 && deltaY < 0) {
+                this.activity.displayMessage("lower left");
+            } else if (deltaX < 0 && deltaY > 0) {
+                this.activity.displayMessage("upper right");
+            } else {
+                this.activity.displayMessage("lower right");
             }
         }
 
@@ -67,14 +80,14 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
     // Invoked when single tap screen.
     @Override
     public boolean onSingleTapConfirmed(MotionEvent e) {
-        this.activity.displayMessage("Single tap occurred.");
+        this.activity.displayMessage("Single tap");
         return true;
     }
 
     // Invoked when double tap screen.
     @Override
     public boolean onDoubleTap(MotionEvent e) {
-        this.activity.displayMessage("Double tap occurred.");
+        this.activity.displayMessage("Double tap");
         return true;
     }
 }
