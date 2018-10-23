@@ -22,6 +22,19 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
     private TextView textView = null;
     private TextView inputField = null;
     private String text = "";
+
+    private TextView cell11 = null;
+    private TextView cell12 = null;
+    private TextView cell13 = null;
+
+    private TextView cell21 = null;
+    private TextView cell22 = null;
+    private TextView cell23 = null;
+
+    private TextView cell31 = null;
+    private TextView cell32 = null;
+    private TextView cell33 = null;
+
     // This is the gesture detector compat instance.
     private GestureDetectorCompat gestureDetectorCompat = null;
 
@@ -49,6 +62,18 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
         textView = (TextView)findViewById(R.id.detect_swipe_direction_textview);
         inputField = (TextView)findViewById(R.id.inputField);
 
+        cell11 = (TextView)findViewById(R.id.cell11);
+        cell12 = (TextView)findViewById(R.id.cell12);
+        cell13 = (TextView)findViewById(R.id.cell13);
+
+        cell21 = (TextView)findViewById(R.id.cell21);
+        cell22 = (TextView)findViewById(R.id.cell22);
+        cell23 = (TextView)findViewById(R.id.cell23);
+
+        cell31 = (TextView)findViewById(R.id.cell31);
+        cell32 = (TextView)findViewById(R.id.cell32);
+        cell33 = (TextView)findViewById(R.id.cell33);
+
         // Create a common gesture listener object.
         DetectSwipeGestureListener gestureListener = new DetectSwipeGestureListener();
 
@@ -57,6 +82,9 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
 
         // Create the gesture detector with the gesture listener.
         gestureDetectorCompat = new GestureDetectorCompat(this, gestureListener);
+
+        // Initialize the keyboard
+        initKeyboard();
     }
 
     @Override
@@ -67,10 +95,8 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
         return true;
     }
 
-    public void displayMessage(String message)
-    {
-        if(textView!=null)
-        {
+    public void displayMessage(String message) {
+        if (textView != null) {
             // Display text in the text view.
             textView.setText(message);
         }
@@ -82,26 +108,47 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
 
             Log.d("FSM","State1:" + stateOne);
 
-            //UI Shows the selected chunk of square
-
-        } else if (stateOne != -1 && (input == 0 || input == 2 || input == 4 || input == 6)) {
-            stateTwo = input/2;
+            // UI Shows the selected chunk of square
+            updateKeyboard();
+        }
+        else if (stateOne != -1 && (input == 0 || input == 2 || input == 4 || input == 6)) {
+            stateTwo = input / 2;
             Log.d("FSM","State1: " + stateOne + " State2: " + stateTwo);
 
-            /*
-
-            UI Shows the selected character
-
-            */
-
-
-
-            //update text on screen
+            // update text on screen
             addToTextField(stringTable[stateOne][stateTwo]);
 
             stateOne = -1;
             stateTwo = -1;
+            initKeyboard();
         }
+    }
+
+    public void initKeyboard() {
+        cell11.setText("qwer");
+        cell12.setText("\\ntyg");
+        cell13.setText("uoif");
+
+        cell21.setText("asdf");
+        cell22.setText("");
+        cell23.setText("hkjl");
+
+        cell31.setText("zx@c");
+        cell32.setText(",v\".");
+        cell33.setText("bn_m");
+    }
+
+    public void updateKeyboard() {
+        cell13.setText("");
+        cell11.setText("");
+        cell22.setText("");
+        cell31.setText("");
+        cell33.setText("");
+
+        cell12.setText(stringTable[stateOne][0].equals("\n") ? "\\n" : stringTable[stateOne][0]);
+        cell21.setText(stringTable[stateOne][1]);
+        cell23.setText(stringTable[stateOne][3]);
+        cell32.setText(stringTable[stateOne][2]);
     }
 
     public void addToTextField(String newElement) {
@@ -116,6 +163,7 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
         }
         stateOne = -1;
         stateTwo = -1;
+        initKeyboard();
     }
 }
 

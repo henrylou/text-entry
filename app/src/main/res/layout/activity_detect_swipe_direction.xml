@@ -22,9 +22,10 @@
         android:id="@+id/detect_swipe_direction_textview"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:layout_gravity="center"
+        android:layout_marginBottom="93dp"
         android:background="@drawable/textview_border"
         android:baselineAligned="false"
         android:paddingLeft="2dp"
@@ -35,6 +36,113 @@
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="14dp" />
+
+    <TableLayout
+        android:layout_width="181dp"
+        android:layout_height="106dp"
+        android:layout_below="@+id/inputField"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="267dp"
+        android:background="@drawable/textview_border">
+
+        <TableRow
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/cell11"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Column 1" />
+
+            <!-- Column 2 -->
+            <TextView
+                android:id="@+id/cell12"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Column 2" />
+
+            <!-- Column 3 -->
+            <TextView
+                android:id="@+id/cell13"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Column 3" />
+        </TableRow>
+
+        <TableRow
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/cell21"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Column 1" />
+
+            <!-- Column 2 -->
+            <TextView
+                android:id="@+id/cell22"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Column 2" />
+
+            <!-- Column 3 -->
+            <TextView
+                android:id="@+id/cell23"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Column 3" />
+        </TableRow>
+
+        <TableRow
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/cell31"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Column 1" />
+
+            <!-- Column 2 -->
+            <TextView
+                android:id="@+id/cell32"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Column 2" />
+
+            <!-- Column 3 -->
+            <TextView
+                android:id="@+id/cell33"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Column 3" />
+        </TableRow>
+    </TableLayout>
 
 </RelativeLayout>
 

@@ -47,9 +47,8 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
         float deltaXAbs = Math.abs(deltaX);
         float deltaYAbs = Math.abs(deltaY);
 
-        if((deltaXAbs >= MIN_SWIPE_DISTANCE_X) && (deltaYAbs >= MIN_SWIPE_DISTANCE_Y))
-        {
-            if(deltaX > 0 && deltaY > 0) {
+        if ((deltaXAbs >= MIN_SWIPE_DISTANCE_X) && (deltaYAbs >= MIN_SWIPE_DISTANCE_Y)) {
+            if (deltaX > 0 && deltaY > 0) {
                 this.activity.displayMessage("upper left");
                 this.activity.finiteStateMachine(UPPER_LEFT);
             } else if (deltaX > 0 && deltaY < 0) {
@@ -62,23 +61,19 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
                 this.activity.displayMessage("lower right");
                 this.activity.finiteStateMachine(LOWER_RIGHT);
             }
-        } else if((deltaXAbs >= MIN_SWIPE_DISTANCE_X) && (deltaXAbs <= MAX_SWIPE_DISTANCE_X)) {
-            if(deltaX > 0)
-            {
+        } else if ((deltaXAbs >= MIN_SWIPE_DISTANCE_X) && (deltaXAbs <= MAX_SWIPE_DISTANCE_X)) {
+            if (deltaX > 0) {
                 this.activity.displayMessage("left");
                 this.activity.finiteStateMachine(LEFT);
-            }else
-            {
+            } else {
                 this.activity.displayMessage("right");
                 this.activity.finiteStateMachine(RIGHT);
             }
-        } else if((deltaYAbs >= MIN_SWIPE_DISTANCE_Y) && (deltaYAbs <= MAX_SWIPE_DISTANCE_Y)) {
-            if(deltaY > 0)
-            {
+        } else if ((deltaYAbs >= MIN_SWIPE_DISTANCE_Y) && (deltaYAbs <= MAX_SWIPE_DISTANCE_Y)) {
+            if (deltaY > 0) {
                 this.activity.displayMessage("up");
                 this.activity.finiteStateMachine(UP);
-            }else
-            {
+            } else {
                 this.activity.displayMessage("down");
                 this.activity.finiteStateMachine(DOWN);
             }
@@ -90,7 +85,7 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
     // Invoked when single tap screen.
     @Override
     public boolean onSingleTapConfirmed(MotionEvent e) {
-        this.activity.displayMessage("Single tap");
+        this.activity.displayMessage("space");
         this.activity.addToTextField(" ");
         return true;
     }
@@ -98,7 +93,7 @@ public class DetectSwipeGestureListener extends GestureDetector.SimpleOnGestureL
     // Invoked when double tap screen.
     @Override
     public boolean onDoubleTap(MotionEvent e) {
-        this.activity.displayMessage("Double tap");
+        this.activity.displayMessage("<-");
         this.activity.deleteOneCharacter();
         return true;
     }
