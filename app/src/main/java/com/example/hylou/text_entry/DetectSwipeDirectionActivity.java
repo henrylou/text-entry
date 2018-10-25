@@ -51,14 +51,14 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
                                  {"v", ",", "\"", "."},
                                  {"n", "b", "_", "m"},
                                  {"k", "h", "j", "l"},
-                                 {"o", "u", "i", "f"}};
+                                 {"o", "u", "i", "p"}};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detect_swipe_direction);
 
-        setTitle("Detect Android Swipe Direction Example.");
+        setTitle("Simple Two Steps Keyboard");
 
         // Get the text view.
         // textView = (TextView)findViewById(R.id.detect_swipe_direction_textview);
@@ -129,17 +129,29 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
     }
 
     public void initKeyboard() {
+//        cell11.setText("qwer");
+//        cell12.setText("\\ntyg");
+//        cell13.setText("uoip");
+//
+//        cell21.setText("asdf");
+//        cell22.setText("");
+//        cell23.setText("hkjl");
+//
+//        cell31.setText("zx@c");
+//        cell32.setText(",v\".");
+//        cell33.setText("bn_m");
+
         cell11.setText("qwer");
         cell12.setText("\\ntyg");
-        cell13.setText("uoif");
+        cell13.setText("uiop");
 
         cell21.setText("asdf");
         cell22.setText("");
-        cell23.setText("hkjl");
+        cell23.setText("hjkl");
 
-        cell31.setText("zx@c");
+        cell31.setText("zxc@");
         cell32.setText(",v\".");
-        cell33.setText("bn_m");
+        cell33.setText("bnm_");
     }
 
     public void updateKeyboard() {
