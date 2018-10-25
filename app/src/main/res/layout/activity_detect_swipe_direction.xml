@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white" >
 
-    <TextView
+    <EditText
         android:id="@+id/inputField"
         android:layout_width="wrap_content"
         android:layout_height="90dp"
@@ -14,7 +14,7 @@
         android:paddingLeft="10dp"
         android:paddingTop="5dp"
         android:paddingRight="10dp"
-        android:text="Text input field"
+        android:text=""
         android:textAllCaps="false"
         android:textSize="16dp" />
 

@@ -5,7 +5,9 @@ import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.EditText;
 
 public class DetectSwipeDirectionActivity extends AppCompatActivity {
 
@@ -20,7 +22,7 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
 
     // This textview is used to display swipe or tap status info.
     private TextView textView = null;
-    private TextView inputField = null;
+    private EditText inputField = null;
     private String text = "";
 
     private TextView cell11 = null;
@@ -59,8 +61,10 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
         setTitle("Detect Android Swipe Direction Example.");
 
         // Get the text view.
+        // textView = (TextView)findViewById(R.id.detect_swipe_direction_textview);
         textView = (TextView)findViewById(R.id.detect_swipe_direction_textview);
-        inputField = (TextView)findViewById(R.id.inputField);
+        inputField = (EditText)findViewById(R.id.inputField);
+        inputField.setSelection(inputField.getText().length());
 
         cell11 = (TextView)findViewById(R.id.cell11);
         cell12 = (TextView)findViewById(R.id.cell12);
@@ -154,16 +158,17 @@ public class DetectSwipeDirectionActivity extends AppCompatActivity {
     public void addToTextField(String newElement) {
         text += newElement;
         inputField.setText(text);
+        inputField.setSelection(inputField.getText().length());
     }
 
     public void deleteOneCharacter() {
         if (text.length() >= 1 && stateOne == -1) {
             text = text.substring(0, text.length() - 1);
             inputField.setText(text);
+            inputField.setSelection(inputField.getText().length());
         }
         stateOne = -1;
         stateTwo = -1;
         initKeyboard();
     }
 }
-
