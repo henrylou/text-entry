@@ -58,7 +58,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Column 1" />
+                android:text="Column 1"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <!-- Column 2 -->
             <TextView
@@ -67,7 +69,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Column 2" />
+                android:text="Column 2"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <!-- Column 3 -->
             <TextView
@@ -76,7 +80,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Column 3" />
+                android:text="Column 3"
+                android:textSize="18sp"
+                android:textStyle="bold" />
         </TableRow>
 
         <TableRow
@@ -90,7 +96,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Column 1" />
+                android:text="Column 1"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <!-- Column 2 -->
             <TextView
@@ -99,7 +107,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Column 2" />
+                android:text="Column 2"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <!-- Column 3 -->
             <TextView
@@ -108,7 +118,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Column 3" />
+                android:text="Column 3"
+                android:textSize="18sp"
+                android:textStyle="bold" />
         </TableRow>
 
         <TableRow
@@ -122,7 +134,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Column 1" />
+                android:text="Column 1"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <!-- Column 2 -->
             <TextView
@@ -131,7 +145,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Column 2" />
+                android:text="Column 2"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <!-- Column 3 -->
             <TextView
@@ -140,7 +156,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Column 3" />
+                android:text="Column 3"
+                android:textSize="18sp"
+                android:textStyle="bold" />
         </TableRow>
     </TableLayout>
 
